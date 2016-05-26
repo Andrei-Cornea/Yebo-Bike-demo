@@ -1,0 +1,498 @@
+html,
+body{
+    height: 100%;
+}
+
+b{
+    font-family: 'Lato';
+    color:  #353638;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+p{
+    font-family: Lato;
+    color:  #848789;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;   
+}
+
+/* ==== HEADER ====*/
+
+.section-1{
+    text-align: center;
+    width: 100%;
+    background: url("../img/Layer7.png") no-repeat top center;
+    height: 100%;
+    background-size: cover;
+}
+.menu{
+    padding-left: 0px;
+    margin: 0 auto;
+    /*max-width: 554px;*/
+}
+.menu li{
+    list-style: none;
+    display: inline-block;
+}
+
+.menu a{
+    text-decoration: none;
+    font-family: 'Lato';
+    color:  #4d4959;
+    font-size: 18px;/* Approximation due to font substitution */
+    font-weight: 500;
+    /*text-align: left;*/
+    -webkit-transition: color .6s  ;
+    -moz-transition: color .6s  ;
+    transition: color .6s  ;
+    /*transition: color .8s;*/
+}
+
+.menu a:hover{
+    color:#64c29e;
+    
+}
+.menu li:not(:first-child){
+    margin-left: 20px;
+}
+.logo{
+    width: 94px;
+    height: 85px;
+    background: url("../img/Logo.png");
+    /*left: -25px;*/
+}
+
+.logo-item .logo{
+     margin:0 25px; 
+     position: relative;
+    top: 35px;
+}
+
+/*=====  ABOUT US ===*/
+.about-us{
+    background-color:  #f7f7f7;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.icon-1,
+.section-2 b,
+.work .text  [class^="icon"]{
+    margin-bottom: 35px;
+}
+
+.section-2 b{
+    display: inline-block;
+}
+
+.section-2 p{
+    margin: 0 auto;
+    max-width: 1080px;
+    font-family: 'Lato';
+    color:  #848789;
+    font-size: 1.1em;/* Approximation due to font substitution */
+    font-weight: 400;
+    line-height: 34px;
+}
+
+/* === section 3 WORK*/
+.work b{
+    text-transform: uppercase;
+}
+
+
+/*--- centering the img logo ---*/
+.Btitle{
+    position: relative;
+    text-align: center;
+}
+
+.Btitle [class^="icon"]{
+   position: absolute;
+   top:50%;
+   left:50%;
+   transform: translate(-50%,-50%);
+}
+
+hr{
+    margin-top: 20px;
+    background: #848789;
+    width: 50px;
+    height: 1px;
+    border: none;
+}
+
+.text {
+    text-align: center;
+}
+
+.work p{
+    text-align: justify;
+}
+
+.bike1 .col-33 > div:nth-child(1),
+.bike2 .col-33 > div:nth-child(1),
+.bike3 .col-33:nth-child(2) .col{
+    height: 400px;
+}
+.bike2 .col-33 > div:nth-child(2),
+.bike1 .col-33 > div:nth-child(2),
+.bike3 .col-33:nth-child(2) .col-100{
+    height: 200px;
+    
+    }
+.bike2 .col-66,
+.bike1 .col-66,
+.bike3 .col-33:first-child,
+.bike3 .col-33:last-child{
+    height: 600px;
+    
+    }
+
+.work .text [class^="icon"]{
+    margin-top: 30px;
+}
+
+
+/*--- BIKE 1----*/
+.bike1 .col-66{
+    /*width: 1067px;*/
+    background: url("../img/Layer10.png")no-repeat;
+    
+}
+
+.bike1 .col-33 > div:nth-child(2){
+    /*width: 533px;*/
+    background: url("../img/Layer11.png")no-repeat;
+} 
+
+/* ---BIKE 2---*/
+
+
+.bike2 .col-33 > div:nth-child(2){
+      background: url("../img/Layer13.png")no-repeat;
+}
+
+.bike2 .col-66{
+    background: url('../img/Layer12.png');
+}
+
+/*----BIKE 3----*/
+.bike3 .col-33:first-child{
+    background: url('../img/Layer15.png');
+}
+
+.bike3 .col-33:nth-child(2) .col-100{
+    background: url('../img/Layer16.png');
+}
+.bike3 .col-33:last-child{
+    background: url('../img/Layer14.png');
+}
+
+/*==== animatia textului sectiunea work===*/
+@-webkit-keyframes text-hover{
+    from{top:10px;opacity: 0;}
+    to{top:0;opacity: 1;}
+}
+
+@keyframes text-hover{
+  from{top:10px;opacity: 0;}
+    to{top:0;opacity: 1;}
+}
+ 
+.text .col{
+    position: relative;
+    -webkit-animation-name: text-hover; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 1s; /* Chrome, Safari, Opera */
+    animation-name: text-hover;
+    animation-duration: 1.5s;  
+}
+ 
+/*=== TWEETS SLIDER Structura ===*/
+
+.section-4{
+    width: 100%;
+    background-color:  #f7f7f7;
+    height: 470px;
+    overflow:hidden;
+}
+.slider{
+  /*overflow:hidden;*/
+  width:497%;
+  position: relative;
+    
+}
+
+.items{
+  text-align: center;
+  display:inline-block;
+  margin-top: 3%;
+  /*border:solid red;*/
+  width:20%;
+}
+
+.active-d{
+    background: #A2A2A2 !important;
+    cursor: default !important;
+}
+.dots{
+    margin-top: 70px;
+    text-align: center;
+}
+.dots li:hover{
+    background: black;
+}
+
+
+.section-4 .dots li:not(:first-child){
+    margin-left: 5px;
+}
+.section-4 .dots li{
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    border-radius:50% ;
+    border:1px solid #ccc;
+    
+    cursor: pointer;
+}
+
+
+
+
+/*===== SECTION 5 SHOP ====*/
+
+.shop a{
+    text-decoration: none;
+}
+.h26{
+    height: 267px;
+    position: relative;
+}
+.h500{
+    height: 534px;
+    position: relative;
+}
+.img19{
+    background: url('../img/Layer19.png');
+}
+
+.img21{
+    background: url('../img/Layer21.png');
+}
+
+.img20{
+    background: url('../img/Layer20.png') no-repeat;
+}
+
+.img22{
+    background: url('../img/Layer22.png')no-repeat;
+}
+
+.img23{
+    background: url('../img/Layer23.png') no-repeat;
+}
+
+.img24{
+    background: url('../img/Layer24.png') no-repeat;
+}
+.img25{
+    background: url('../img/Layer25.png') no-repeat;
+}
+
+.img26{
+    background: url('../img/Layer26.png') no-repeat;
+}
+
+.hover{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background:  rgba(100, 194, 158, 0);
+    -webkit-transition: all .8s  ;
+    -moz-transition: all .8s  ;
+    transition: all .8s  ;
+    position: relative;
+}
+
+.hover:hover{
+    background:  rgba(100, 194, 158, 0.9);
+}
+
+.content-hover{
+    height: inherit;
+    width: inherit;
+    -webkit-transition: all .5s  ;
+    -moz-transition: all .5s  ;
+    transition: all .5s  ;
+    opacity: 0;
+    position: absolute;
+}
+
+.hover:hover .content-hover{
+    transform: translateY(43%);
+    opacity: 1;
+}
+
+.hover p{
+    font-family: 'Lato';
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-weight: 700;
+    color:  #ffffff;
+    margin: 0;
+}
+
+/*---- !!! if the class is moved before the img class they will not have the property cover !!!!---*/
+
+
+.shop .discoverBtn{
+    text-align: center;
+    height: 200px;
+    background-color:  #282f35;
+    position: relative;
+}
+
+.discoverBtn div{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.discoverBtn a{
+    line-height: 50px;
+    display: inline-block;
+    height: 50px;
+    width: 22em;
+    border-style: solid;
+    border-width: 1px;
+    border-color:  rgba(255, 255, 255, 50);
+    text-decoration: none;
+    font-family: 'Lato';
+    color:  #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    -webkit-transition: all .6s  ;
+    -moz-transition: all .6s  ;
+    transition: all .6s  ;
+    letter-spacing: 3px;
+}
+
+.discoverBtn a:hover{
+    color:#64c29e;
+    border:1px solid#64c29e;
+    
+}
+
+/* ======  SECTION 6 MAILING =====*/
+
+.mailing{
+    height: 469px;
+    position: relative;
+}
+
+.mailing .wrapper{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 500px;
+}
+
+.mailing p{
+    margin: 46px 0;
+    font-family: Lato;
+    color:  #848789;
+    font-size: 24px;
+    font-style: italic;
+    /*line-height: 34px;*/
+    text-align: center;
+}
+
+.mailing input{
+    border-style: solid;
+    border-width: 1px;
+    border-color: #d3d7d9;
+    /*box-sizing: border-box;*/
+    background-color: #ffffff;
+    width: 300px;
+    height: 69px;
+    font-family: Lato;
+    color:  rgba(146, 146, 146);
+    font-size: 20px;
+    font-style: italic;
+    line-height: 24px;
+}
+
+input[placeholder] {
+    padding-left: 28px;
+}
+
+:focus{
+    outline: none;
+}
+.mailing button{
+    display: inline-block;
+    background-color: #64c29e;
+    width: 126px;
+    height: 69px;
+    font-family: Lato;
+    color: #ffffff;
+    font-size: 24px; 
+    font-weight: 300;
+    margin-left: 5px;
+    border: 0;
+   }
+
+/*=== FOOTER ====*/
+
+footer{
+    font-family: Lato;
+    color: #848789;
+    width: 100%;
+    height: 250px;
+    background-color:  #f7f7f7;
+    
+}
+
+footer .col-33{
+  display: table;
+  height: 250px;   
+}
+
+footer .wrapper{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+footer address{
+    display: inline-block;
+    text-align: left;
+}
+
+.credits{
+    font-family: Lato;
+    color: #848789;
+    font-size: 19px; 
+    font-style: italic;
+
+}
+
+.Bsc{
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
+/*===== MEDIA QUERY =====*/
+
+@media (max-width: 1000px) {
+    
+     [class*="col-"] {
+        width: 100%;
+    }
+    
+}
