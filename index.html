@@ -6,6 +6,7 @@
     <!--Normalizer Reset-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css">
     <!--Font-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,100,100italic,300,300italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
     
     <!--jQUERY-->
@@ -18,16 +19,17 @@
 </head>
 <body>
     <header class="section-1">
+            <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
             <ul class="menu">
-                <li><a id="about"  href="#aboutsection">ABOUS US</a>   </li>
-                <li>.</li>
-                <li><a id="work" href="#worksection">WORK</a>  </li>
+                <li><a id="about" class="mlink"  href="#aboutsection">ABOUST US</a>   </li>
+                <li class="md">.</li>
+                <li><a id="work" class="mlink" href="#worksection">WORK</a>  </li>
                 <li class="logo-item">
                 <a href="#"><div class="logo"></div></a>
                 </li>
-                <li><a id="shop" href="#shopsection">SHOP</a></li>
-                <li>.</li>
-                <li><a id="contact" href="#contactsection">CONTACT</a></li>
+                <li><a id="shop" class="mlink" href="#shopsection">SHOP</a></li>
+                <li class="md">.</li>
+                <li><a id="contact" class="mlink" href="#contactsection">CONTACT</a></li>
             </ul>
     </header>
     <div class="section-2 about-us" id="aboutsection">
@@ -44,10 +46,12 @@
             </div>
             <div class="col-33 text">
                 <div class="col">
-                    <img class="icon3" src="assets/img/Icon3.png" alt="Icon3"><br>
-                    <b>vintage Oliva</b>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived.</p>
-                    <hr>
+                    <div class="content">
+                         <img class="icon3" src="assets/img/Icon3.png" alt="Icon3"><br>
+                        <b>vintage Oliva</b>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived.</p>
+                        <hr>
+                    </div>
                 </div>
                 <div class="col-100 Bsc"></div>
             </div>
@@ -55,10 +59,12 @@
         <div class="bike2 row">
             <div class="col-33 text">
                 <div class="col">
-                    <img class="icon4" src="assets/img/Icon4.png" alt="Icon4"><br>
-                    <b>La Boriosa</b>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived.</p>
-                    <hr>
+                    <div class="content">
+                        <img class="icon4" src="assets/img/Icon4.png" alt="Icon4"><br>
+                        <b>La Boriosa</b>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived.</p>
+                        <hr>
+                    </div>
                 </div>
                 <div class="col-100 Bsc"></div>
             </div>
@@ -72,13 +78,14 @@
             </div>
             <div class=" col-33 text">
                 <div class="col">
-                     <img class="icon7" src="assets/img/Icon7.png" alt="icon7"><br>
-                    <b>retrò Bike - M. Hulot</b>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived.</p>
-                    <hr>
+                    <div class="content">
+                        <img class="icon7" src="assets/img/Icon7.png" alt="icon7"><br>
+                        <b>retrò Bike - M. Hulot</b>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived.</p>
+                        <hr>
+                    </div>
                 </div>
                 <div class="col-100 Bsc"></div>
-               
             </div>
             <div class=" col-33 Bsc"></div>
         </div>
@@ -249,13 +256,40 @@
                 return false;
             });
         
+        // Menu BAR click
         
-           
+     
+           $(".fa-bars").click(function() {
+               $(".menu li:not(:nth-child(4)").slideToggle("slow");
+           })
+        
+       
         
         $(function(){
-            // === SLIDER ===
-            
-            
+             
+            //======  ANIMATIONS on SCROLLING =====
+             var bike2 = $('.bike2').offset().top,
+              bike1 = $('.bike1').offset().top,
+              bike3 = $('.bike3').offset().top;
+             
+             $(window).scroll(function(){
+                 if($(document).scrollTop() > $("[class*='bike']").offset().top *0.7){
+                      $(".Btitle [class*='icon'],.text .content").each(function(){
+                             $(this).slideDown(2000);
+                        })
+                     
+                 }
+                 
+                 
+                     if($(document).scrollTop() < $("[class*='bike']").offset().top - $(window).height()*0.7){
+                        $(".Btitle [class*='icon'],.text .content").each(function(){
+                            console.log("element", this);
+                             $(this).slideUp(1000);
+                        })
+                     }
+             })
+             
+             // === SLIDER ===
             function slide(){
             
   // definim var active si directia in care merge slider-ul
@@ -266,23 +300,30 @@
                 var cDot = $('.active-d'),
                     nDot = cDot.next();
                     
+// conditia de returnare a carouselului                    
               if($('.items').last().hasClass('active-s')){
                   nSlide = $('.items').first();
                   nDot = $('.dots li').first();
                    $(".slider").animate({
-                    left:'0%'
-                },800)
+                       
+                         left:'0%'
+                         
+                    },800)
                 
-              }else{
+              }else{// de ce daca bag slider carousel si dots in else nu mai merge !?
                    $(".slider").animate({ 
-                    left:'-=100%'
-                },800) 
+                       
+                        left:'-=100%'
+                        
+                    },800) 
               }
-                 // == Slide carousel forward==
+              
+                 // == Slide active class carousel forward ==
                  cSlide.removeClass('active-s');
                  nSlide.addClass('active-s'); 
                  
                  // === DOTS carousel ==
+                 
                  cDot.removeClass('active-d');
                  nDot.addClass('active-d'); 
                  
