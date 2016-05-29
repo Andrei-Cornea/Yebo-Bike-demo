@@ -21,12 +21,17 @@ p{
 /* ==== HEADER ====*/
 
 .section-1{
+    position: relative;
     text-align: center;
     width: 100%;
     background: url("../img/Layer7.png") no-repeat top center;
     height: 100%;
     background-size: cover;
 }
+.fa-bars{
+    display: none;
+}
+
 .menu{
     padding-left: 0px;
     margin: 0 auto;
@@ -102,6 +107,11 @@ p{
     text-transform: uppercase;
 }
 
+
+.Btitle [class*='icon'],
+.text .content{
+    display: none;
+}
 
 /*--- centering the img logo ---*/
 .Btitle{
@@ -234,7 +244,7 @@ hr{
 }
 
 .active-d{
-    background: #A2A2A2 !important;
+    background: #ccc !important;
     cursor: default !important;
 }
 .dots{
@@ -495,4 +505,54 @@ footer address{
         width: 100%;
     }
     
+    .fa-bars{
+        display: inline;
+        position: absolute;
+        top:8%;
+        right: 5%;
+        cursor: pointer;
+    }
+    
+     .menu{
+       padding-top: 150px;
+        /*max-width: 140px;*/
+        /*display: none;*/
+    }
+    
+    .logo-item{
+        position: absolute;
+        left: 0;
+        top:0px;
+        background:none!important;
+        
+    }
+    
+    .md{
+        display:none!important;
+    }
+    
+    .menu li {
+        margin:0;
+        /*padding-top: 15px;*/
+        height: 50px;
+        line-height: 50px;
+        margin-left: 0;
+        display: block;
+        background:rgba(53, 54, 55,0.8);
+        
+    }
+    
+    .menu li:not(:nth-child(4)){
+        /*height: 50px;*/
+        display:none;
+    }
+    
+    .menu a {
+       color:#64c29e; 
+    }
+    
+    .menu li:not(:first-child){
+        margin-left: 0px;
+        
+    }
 }
